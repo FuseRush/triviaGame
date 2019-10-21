@@ -6,10 +6,9 @@ you also want it clean off any lagging carage returns from the end of the line
 @return {array} the contents of the string an array, 1 line per array index;
 */
 
-
 function stringParser(){
   var lines = text.match(/^.*([\n\r]+|$)/gm);
-  
+
 
 }
 
@@ -42,4 +41,8 @@ function stringReader(string, split=";"){
   var stringP = stringParser(string);
   var arrayR = stringParser(array, split);
   return {str:stringP, bool:arrayR}
+}
+
+function stringParser(string){
+
 }
