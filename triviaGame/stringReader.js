@@ -5,9 +5,6 @@ you also want it clean off any lagging carage returns from the end of the line
 @param string: {string} a big old string to be read
 @return {array} the contents of the string an array, 1 line per array index;
 */
-function stringParser() {
-var lines = text.match(/^.*([\n\r]+|$)/gm);
-
 function stringParser(){
   var lines = text.match(/^.*([\n\r]+|$)/gm);
 
@@ -42,4 +39,4 @@ function stringReader(string, split=";"){
   var arrayR = stringParser(array, split);
   return {str:stringP, bool:arrayR}
 
-}
+\}
