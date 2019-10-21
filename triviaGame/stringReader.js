@@ -6,6 +6,7 @@ you also want it clean off any lagging carage returns from the end of the line
 @return {array} the contents of the string an array, 1 line per array index;
 */
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 function stringParser(){
@@ -48,3 +49,8 @@ function stringReader(string, split=";"){
   return {str:stringP, bool:arrayR}
 }
 >>>>>>> dc939ec666254f5dd3abe38195f60d3b2ea88f5a
+=======
+function stringParser(string){
+  
+}
+>>>>>>> Stashed changes
