@@ -15,7 +15,7 @@ function stringParser(string){
       lines[i] = lines[i].slice(lines[i], lines[i].length-1);
     }
   }
-  return string;
+  return lines;
 }
 
 /* arrayReader(array, split)
