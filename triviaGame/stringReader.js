@@ -8,16 +8,7 @@ you also want it clean off any lagging carage returns from the end of the line
 function stringParser() {
 var lines = text.match(/^.*([\n\r]+|$)/gm);
 
-<<<<<<< HEAD
 }
-=======
-function stringParser(){
-  var lines = text.match(/^.*([\n\r]+|$)/gm);
-
-
-}
-
->>>>>>> 926a573f2bf7ecc397e10c1bc16cb19a67d935f0
 /* arrayReader(array, split)
 take an array of strings in the format of text 1 split text 2
 cleans up any extra whitespace
@@ -28,18 +19,9 @@ makes a new array where each element is an object.
 @param split: {string} the item to split at
 @return {array} an array of objects keyed with str and bool and negated : false
 */
-<<<<<<< HEAD
-=======
-
->>>>>>> 926a573f2bf7ecc397e10c1bc16cb19a67d935f0
 arrayReader(array, split);
-var ten= ["text 1"+ split + "text 2"]
-var object{str: text1, bool: bool based on text2}
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 926a573f2bf7ecc397e10c1bc16cb19a67d935f0
+var ten= ["text 1"+ split + "text 2"];
+var object{str: text1, bool: bool based on text2};
 
 /* stringReader(string, split=";")
 a wrapper function for stringParser and arrayReader
@@ -47,22 +29,9 @@ a wrapper function for stringParser and arrayReader
 @pram split=";" {string} where to split the string
 @return {array} an array of objects keyed str and bool
 */
-<<<<<<< HEAD
 function stringReader(string,spliy=";") {
-=======
-
-
-function stringReader(string, split=";"){
->>>>>>> 926a573f2bf7ecc397e10c1bc16cb19a67d935f0
   var stringP = stringParser(string);
   var arrayR = stringParser(array, split);
   return {str:stringP, bool:arrayR}
 
 }
-<<<<<<< HEAD
-=======
-
-function stringParser(string){
-
-}
->>>>>>> 926a573f2bf7ecc397e10c1bc16cb19a67d935f0
