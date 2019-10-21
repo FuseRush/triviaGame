@@ -9,11 +9,21 @@ you also want it clean off any lagging carage returns from the end of the line
 function stringParser() {
 var lines = text.match(/^.*([\n\r]+|$)/gm);
 
+<<<<<<< HEAD
 }
 =======
 function stringParser(){
   var lines = text.match(/^.*([\n\r]+|$)/gm);
 
+=======
+function stringParser(string){
+  var lines = string.match(/^.*([\n\r]+|$)/gm);
+  for (var i = 0; i < lines.length; i++) {
+    if ( i = lines.length - 1){
+      
+    }
+  }
+>>>>>>> 85b96c9e1002ab5582a212a4f5e6da7794b7b0ee
 
 }
 
