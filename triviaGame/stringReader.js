@@ -5,6 +5,8 @@ you also want it clean off any lagging carage returns from the end of the line
 @param string: {string} a big old string to be read
 @return {array} the contents of the string an array, 1 line per array index;
 */
+function stringParser() {
+var lines = text.match(/^.*([\n\r]+|$)/gm);
 
 function stringParser(){
   var lines = text.match(/^.*([\n\r]+|$)/gm);
@@ -24,7 +26,7 @@ makes a new array where each element is an object.
 */
 arrayReader(array, split);
 var ten= ["text 1"+ split + "text 2"]
-{str: text1, bool: bool based on text2}
+var object{str: text1, bool: bool based on text2}
 
 
 /* stringReader(string, split=";")
@@ -34,8 +36,10 @@ a wrapper function for stringParser and arrayReader
 @return {array} an array of objects keyed str and bool
 */
 
+
 function stringReader(string, split=";"){
   var stringP = stringParser(string);
   var arrayR = stringParser(array, split);
   return {str:stringP, bool:arrayR}
+
 }
