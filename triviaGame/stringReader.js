@@ -18,10 +18,9 @@ makes a new array where each element is an object.
 @param split: {string} the item to split at
 @return {array} an array of objects keyed with str and bool and negated : false
 */
-
 function arrayReader(array, split){
   var ten = ["text1"+ split + "text2"];
-  var obj = {str: "text1", bool:false};
+  var obj = {str: "text1", bool: false};
 }
 
 /* stringReader(string, split=";")
