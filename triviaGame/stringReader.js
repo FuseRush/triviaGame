@@ -39,9 +39,3 @@ function stringReader(string, split=";"){
   var stringP = stringParser(string);
   var arrayR = stringParser(array, split);
   return {str:stringP, bool:arrayR}
-<<<<<<< HEAD
-
-\}
-=======
-}
->>>>>>> master
