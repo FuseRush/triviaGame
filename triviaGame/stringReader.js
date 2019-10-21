@@ -21,10 +21,18 @@ makes a new array where each element is an object.
 @param split: {string} the item to split at
 @return {array} an array of objects keyed with str and bool and negated : false
 */
+<<<<<<< HEAD
 arrayReader(array, split);
 var ten= ["text 1"+ split + "text 2"]
 var object{str: text1, bool: bool based on text2}
 
+=======
+
+function arrayReader(array, split){
+  var ten = ["text1"+ split + "text2"];
+  var obj = {str: "text1", bool:false};
+}
+>>>>>>> master
 
 /* stringReader(string, split=";")
 a wrapper function for stringParser and arrayReader
@@ -38,5 +46,9 @@ function stringReader(string, split=";"){
   var stringP = stringParser(string);
   var arrayR = stringParser(array, split);
   return {str:stringP, bool:arrayR}
+<<<<<<< HEAD
 
 \}
+=======
+}
+>>>>>>> master
