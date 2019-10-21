@@ -9,11 +9,13 @@ you also want it clean off any lagging carage returns from the end of the line
 function stringParser(string){
   var lines = string.match(/^.*([\n\r]+|$)/gm);
   for (var i = 0; i < lines.length; i++) {
-    if ( i = lines.length - 1){
-      
+    if ( i == lines.length - 1){
+      continue;
+    }else {
+      lines[i] = lines[i].slice(lines[i], lines[i].length-1);
     }
   }
-
+  return lines;
 }
 
 /* arrayReader(array, split)
