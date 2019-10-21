@@ -13,7 +13,7 @@ function stringParser(string){
 
     }
   }
-  return string;
+  return lines;
 }
 /* arrayReader(array, split)
 take an array of strings in the format of text 1 split text 2
