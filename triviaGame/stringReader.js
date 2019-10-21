@@ -27,6 +27,8 @@ makes a new array where each element is an object.
 function arrayReader(array, split){
   var ten = ["text1"+ split + "text2"];
   var obj = {str: "text1", bool: false};
+  [{}]
+  [{str: ,bool: }]
 }
 
 /* stringReader(string, split=";")
