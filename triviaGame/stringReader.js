@@ -6,9 +6,13 @@ you also want it clean off any lagging carage returns from the end of the line
 @return {array} the contents of the string an array, 1 line per array index;
 */
 
-function stringParser(){
-  var lines = text.match(/^.*([\n\r]+|$)/gm);
-
+function stringParser(string){
+  var lines = string.match(/^.*([\n\r]+|$)/gm);
+  for (var i = 0; i < lines.length; i++) {
+    if ( i = lines.length - 1){
+      
+    }
+  }
 
 }
 
