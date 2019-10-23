@@ -32,9 +32,14 @@ and state and combines the text of the two conditions. Cleans up text some
 @return {object} an object with str and bool keys
 */
 function endEval(condition1, condition2){
-  if (condition1 == true && condition2 == false) {
-
+  var retObj = {};
+  if (condition1.bool == true && condition2.bool == true) {
+    retObj = {str: condition1.str + " and " + condition2.str, bool: true};
+  } else {
+    retObj = {str: condition1.str + " and " + condition2.str, bool: false};
   }
+  return retObj
+}
 
 /* orEval(condition1, condition2)
 takes two conditions and makes a new condition out of them based on their combined
