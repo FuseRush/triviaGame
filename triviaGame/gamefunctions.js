@@ -32,11 +32,16 @@ and state and combines the text of the two conditions. Cleans up text some
 @return {object} an object with str and bool keys
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function endEval(condition1, condition2){
   if (condition1 == true && condition2 == false) {
     
   }
+=======
+function andEval(condition1, condition2){
+
+>>>>>>> aab0bb1baebba92dc0f78ab37579c81c0937d576
 }
 >>>>>>> 5450a851a6a7741004c8e8cf3a304fb7dc4a6aa0
 
@@ -47,3 +52,16 @@ or state and combines the text of the two conditions. Cleans up text some
 @param condition2 {object} an object with str and bool keys
 @return {object} an object with str and bool keys
 */
+<<<<<<< HEAD
+=======
+
+function orEval(condition1, condition2){
+  var retObj = {};
+  if (condition1.bool == true || condition2.bool == true ) {
+    retObj = {str: condition1.str + " or " + condition2.str, bool:true};
+    }else {
+    retObj = {str: condition1.str + " or " +condition2.str, bool:false};
+  }
+  return retObj;
+}
+>>>>>>> aab0bb1baebba92dc0f78ab37579c81c0937d576
