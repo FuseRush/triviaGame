@@ -59,9 +59,24 @@ or state and combines the text of the two conditions. Cleans up text some
 function orEval(condition1, condition2){
   var retObj = {};
   if (condition1.bool == true || condition2.bool == true ) {
-    retObj = {str: condition1.str + " or " + condition2.str, bool:true};
+    retObj = {str: condition1.str + " or " + condition2.str, bool: true};
     }else {
-    retObj = {str: condition1.str + " or " +condition2.str, bool:false};
+    retObj = {str: condition1.str + " or " + condition2.str, bool: false};
   }
-  return retObj;
+  return retObj
+}
+
+/* notEval(condition)
+takes a condtion, negates it's value, adds the text "it is not the case that" to the
+front of it, sets the negated key to true
+@param condtion {object} an object with str and bool keys
+@return {object} an object with str, bool, and negated keys
+*/
+function notEval(condition) {
+  var retObj = {};
+  if (condition.bool == false) {
+    retObj = {str: condition.str, bool: true};
+  }
+  console.log(retObj);
+  return "It is not the case that " + retObj.str
 }
