@@ -18,12 +18,19 @@ function uniqueIndex(max, number){
   var array = [];
   var numbers = [];
   array.length = max;
-  for (var i = 0; i < array.length; i++) {
-    if () {
-
+  for (var i = 0; i < number; i++) {
+    var num = randNum(max);
+    if (array[num] !== "") {
+      numbers[i] = num;
+    }else {
+      var num = randNum(max);
+      i--;
     }
+    array[num] = "";
   }
+  return numbers;
 }
+
 /* andEval(condition1, condition2)
 takes two conditions and makes a new condition out of them based on their combined
 and state and combines the text of the two conditions. Cleans up text some
