@@ -40,7 +40,9 @@ and state and combines the text of the two conditions. Cleans up text some
 @return {object} an object with str and bool keys
 */
 function endEval(condition1, condition2){
-
+  if (condition1 == true && condition2 == false) {
+    
+  }
 }
 
 /* orEval(condition1, condition2)
