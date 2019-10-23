@@ -9,15 +9,12 @@ you also want it clean off any lagging carage returns from the end of the line
 function stringParser(string){
   var lines = string.match(/^.*([\n\r]+|$)/gm);
   for (var i = 0; i < lines.length; i++) {
-    if ( i == lines.length - 1){
-      continue;
-    }else {
-      lines[i] = lines[i].slice(lines[i], lines[i].length-1);
+    if ( i = lines.length - 1){
+
     }
   }
   return lines;
 }
-/* <----------------------finished above this line ------------------------->*/
 /* arrayReader(array, split)
 take an array of strings in the format of text 1 split text 2
 cleans up any extra whitespace
@@ -28,11 +25,20 @@ makes a new array where each element is an object.
 @param split: {string} the item to split at
 @return {array} an array of objects keyed with str and bool and negated : false
 */
-
 function arrayReader(array, split){
-  var ten = ["text1"+ split + "text2"];
-  var obj = {str: "text1", bool:"text2"};
-  return [obj];
+  var retArray = [];
+  for (var i = 0; i < array.length; i++) {
+    var obj = {}
+    var line = array[i].split(split);
+    obj.str = line[0].trim();
+    if (line[1].trim() === "true") {
+      obj.bool = true ;
+    }else{
+      obj.bool = false;
+    }
+    retArray.push(obj);
+  }
+  return retArray;
 }
 
 /* stringReader(string, split=";")
@@ -41,10 +47,8 @@ a wrapper function for stringParser and arrayReader
 @pram split=";" {string} where to split the string
 @return {array} an array of objects keyed str and bool
 */
-
-
 function stringReader(string, split=";"){
-  var stringP = stringParser(string);
-  var arrayR = stringParser(array, split);
-  return {str:stringP, bool:arrayR}
+var strP = stringParser(string);
+var arraR = arrayReader(strP, split);
+return arraR;
 }
