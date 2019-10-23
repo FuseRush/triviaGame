@@ -17,7 +17,7 @@ function stringParser(string){
   }
   return lines;
 }
-
+/* <----------------------finished above this line ------------------------->*/
 /* arrayReader(array, split)
 take an array of strings in the format of text 1 split text 2
 cleans up any extra whitespace
@@ -30,8 +30,9 @@ makes a new array where each element is an object.
 */
 
 function arrayReader(array, split){
-  var ten = [text1+ split + text2];
-  var obj = {str: "text1", bool:};
+  var ten = ["text1"+ split + "text2"];
+  var obj = {str: "text1", bool:"text2"};
+  return [obj];
 }
 
 /* stringReader(string, split=";")
