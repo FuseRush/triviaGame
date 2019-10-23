@@ -18,9 +18,39 @@ function uniqueIndex(max, number){
   var array = [];
   var numbers = [];
   array.length = max;
-  for (var i = 0; i < array.length; i++) {
-    if () {
-
+  for (var i = 0; i < number; i++) {
+    var num = randNum(max);
+    if (array[num] !== "") {
+      numbers[i] = num;
+    }else {
+      var num = randNum(max);
+      i--;
     }
+    array[num] = "";
   }
+  return numbers;
+}
+
+
+/* andEval(condition1, condition2)
+takes two conditions and makes a new condition out of them based on their combined
+and state and combines the text of the two conditions. Cleans up text some
+@param condition1 {object} an object with str and bool keys
+@param condition2 {object} an object with str and bool keys
+@return {object} an object with str and bool keys
+*/
+function endEval(condition1, condition2){
+
+}
+
+/* orEval(condition1, condition2)
+takes two conditions and makes a new condition out of them based on their combined
+or state and combines the text of the two conditions. Cleans up text some
+@param condition1 {object} an object with str and bool keys
+@param condition2 {object} an object with str and bool keys
+@return {object} an object with str and bool keys
+*/
+
+function orEval(){
+
 }
