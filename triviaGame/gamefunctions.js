@@ -4,7 +4,7 @@ a helper function to return whole number randoms
 @return {int} a random number of 1 or more
 */
 function randNum(max){
-
+return Math.floor(Math.random()*max)+1;
 }
 
 
