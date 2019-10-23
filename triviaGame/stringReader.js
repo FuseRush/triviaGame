@@ -26,8 +26,19 @@ makes a new array where each element is an object.
 @return {array} an array of objects keyed with str and bool and negated : false
 */
 function arrayReader(array, split){
-  var ten = [text1+ split + text2];
-  var obj = {str: "text1", bool:};
+  var retArray = [];
+  for (var i = 0; i < array.length; i++) {
+    var obj = {}
+    var line = array[i].split(split);
+    obj.str = line[0].trim();
+    if (line[1].trim() === "true") {
+      obj.bool = true ;
+    }else{
+      obj.bool = false;
+    }
+    retArray.push(obj);
+  }
+  return retArray;
 }
 
 /* stringReader(string, split=";")
@@ -37,7 +48,7 @@ a wrapper function for stringParser and arrayReader
 @return {array} an array of objects keyed str and bool
 */
 function stringReader(string, split=";"){
-  var stringP = stringParser(string);
-  var arrayR = stringParser(array, split);
-  return {str:stringP, bool:arrayR}
+var strP = stringParser(string);
+var arraR = arrayReader(strP, split);
+return arraR;
 }
