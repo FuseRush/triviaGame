@@ -73,12 +73,10 @@ front of it, sets the negated key to true
 @return {object} an object with str, bool, and negated keys
 */
 function notEval(condition) {
-  var retObj = {};
-  if (condition.bool == false) {
-    retObj = {str: condition.str, bool: true};
+  var retObj = {negated: true};
+  if (retObj.negated == false) {
+    return retObj = {str: "It is not the case that " + condition.str, negated: true};
   }
-  console.log(retObj);
-  return "It is not the case that " + retObj.str
 }
 
 
