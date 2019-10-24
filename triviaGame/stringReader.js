@@ -10,7 +10,7 @@ function stringParser(string){
   var lines = string.match(/^.*([\n\r]+|$)/gm);
   for (var i = 0; i < lines.length; i++) {
     if ( i = lines.length - 1){
-
+      continue;
     }
   }
   return lines;
@@ -31,6 +31,7 @@ function arrayReader(array, split){
     var obj = {}
     var line = array[i].split(split);
     obj.str = line[0].trim();
+    obj.negated = false;
     if (line[1].trim() === "true") {
       obj.bool = true ;
     }else{
@@ -38,7 +39,6 @@ function arrayReader(array, split){
     }
     retArray.push(obj);
   }
-  obj.negated = false;
   return retArray;
 }
 
@@ -48,7 +48,7 @@ a wrapper function for stringParser and arrayReader
 @pram split=";" {string} where to split the string
 @return {array} an array of objects keyed str and bool
 */
-function stringReader(string, split=";"){
+function stringreader(string, split=";"){
   var strP = stringParser(string);
   var arraR = arrayReader(strP, split);
     return arraR;

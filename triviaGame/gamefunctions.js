@@ -4,7 +4,7 @@ a helper function to return whole number randoms
 @return {int} a random number of 1 or more
 */
 function randNum(max){
-return Math.floor(Math.random()*max)+1;
+  return Math.floor(Math.random()*max)+1;
 }
 
 
@@ -71,8 +71,40 @@ front of it, sets the negated key to true
 @param condtion {object} an object with str and bool keys
 @return {object} an object with str, bool, and negated keys
 */
+<<<<<<< HEAD
 
 
+=======
+function notEval(condition) {
+  var retObj = {};
+  if (condition.bool == false) {
+    retObj = {str:"It is not the case that "+ condition.str, bool: true, negated: true};
+  }else {
+    retObj = {str:"It is not the case that "+ condition.str, bool: false, negated: true}
+  }
+  return retObj;
+}
+
+//to the following:
+/* arrayReader(array, split)
+take an array of strings in the format of text 1 split text 2
+text 2 is assumed to be the words true or false. Uses these to set bools
+makes a new array where each element is an object.
+@param array: {array} an array with string containing the split
+@param split: {string} the item to split at
+@return {array} an array of objects keyed with str, bool and the new key negated: false
+*/
+
+//2. implement
+/* notEval(condition)
+takes a condtion, negates it's value, adds the text "it is not the case that" to the
+front of it, sets the negated key to true
+@param condtion {object} an object with str and bool keys
+@return {object} an object with str, bool, and negated keys
+*/
+
+//3. implement the following
+>>>>>>> c87f6e61147bd0fbb6316ab9553c63b4066d77f5
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
 takes an array of condition objects formated {str: text, bool: bool, negated: bool}
 and uses it make a question of depths between 1 - maxDepth combined statement length
@@ -82,6 +114,27 @@ it should randomly use and or ors at a 50% chance each
 @param negate {float} chance of a negation happening
 @return a new object with the same general format
 */
+<<<<<<< HEAD
+=======
+function makeQuestions(conditions, maxDepth=3, negate=.2){
+  var retObj = {};
+  var string = str;
+  var str = stringreader(string);
+  var num = uniqueIndex(string.length, randNum(string.length))
+    for (var i = 0; i < maxDepth - 1; i++) {
+      if (Math.random() < .5){
+        retObj = orEval(conditions[], conditions[]);
+    }else {
+        retObj = andEval(conditions[], conditions[]);
+    }
+  }
+  return retObj;
+}
+//^^^ with this one -
+//You'll need to pick random things without replacement (did we do a function for that?)
+//You'll need to have a random chance of a negation (by default 20% (aka .2)
+//You'll need to loop through maxDepth amount of things and glue them together, but you'll have to do something different when there is only 1 left . What sort of loop and logic would work best for this?
+>>>>>>> c87f6e61147bd0fbb6316ab9553c63b4066d77f5
 
 /* makeSentence(condition)
 Makes a (likely run-on) sentence out of a conditional stored in an object with the keys
