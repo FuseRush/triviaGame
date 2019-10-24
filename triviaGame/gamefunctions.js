@@ -4,7 +4,7 @@ a helper function to return whole number randoms
 @return {int} a random number of 1 or more
 */
 function randNum(max){
-return Math.floor(Math.random()*max)+1;
+  return Math.floor(Math.random()*max)+1;
 }
 
 
@@ -75,12 +75,12 @@ front of it, sets the negated key to true
 function notEval(condition) {
   var retObj = {};
   if (condition.bool == false) {
-    retObj = {str: condition.str, bool: true};
+    retObj = {str:"It is not the case that "+ condition.str, bool: true, negated: true};
+  }else {
+    retObj = {str:"It is not the case that "+ condition.str, bool: false, negated: true}
   }
-  console.log(retObj);
-  return "It is not the case that " + retObj.str
+  return retObj;
 }
-
 
 //to the following:
 /* arrayReader(array, split)
@@ -111,13 +111,14 @@ and uses it make a question of depths between 1 - maxDepth combined statement le
 */
 function makeQuestions(conditions, maxDepth=3, negate=.2){
   var retObj = {};
-  var str = conditions.str;
-  var bool = conditions.bool;
+  var string = str;
+  var str = stringreader(string);
+  var num = uniqueIndex(string.length, randNum(string.length))
     for (var i = 0; i < maxDepth - 1; i++) {
       if (Math.random() < .5){
-      orEval(condtions[i], conditions[i]);
+        retObj = orEval(conditions[], conditions[]);
     }else {
-      andEval(conditions[i], conditions[i]);
+        retObj = andEval(conditions[], conditions[]);
     }
   }
   return retObj;
