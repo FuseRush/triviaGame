@@ -142,7 +142,7 @@ adds the phrase "It is the case " to the start of the str and adds a period to t
 function makeSentence(condition) {
   if (condition.negated== true ){
     condition.str ="I" + condition.str.slice(1) + ".";
-    
+    condition {array}
     }
-
+return 
 }
