@@ -38,6 +38,7 @@ function arrayReader(array, split){
     }
     retArray.push(obj);
   }
+  obj.negated = false;
   return retArray;
 }
 
@@ -48,7 +49,17 @@ a wrapper function for stringParser and arrayReader
 @return {array} an array of objects keyed str and bool
 */
 function stringReader(string, split=";"){
-var strP = stringParser(string);
-var arraR = arrayReader(strP, split);
-return arraR;
+  var strP = stringParser(string);
+  var arraR = arrayReader(strP, split);
+    return arraR;
 }
+
+//1. change the following function in stringReader:
+/* arrayReader(array, split)
+take an array of strings in the format of text 1 split text 2
+text 2 is assumed to be the words true or false. Uses these to set bools
+makes a new array where each element is an object.
+@param array: {array} an array with string containing the split
+@param split: {string} the item to split at
+@return {array} an array of objects keyed with str and bool
+*/
