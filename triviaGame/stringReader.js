@@ -48,7 +48,7 @@ a wrapper function for stringParser and arrayReader
 @pram split=";" {string} where to split the string
 @return {array} an array of objects keyed str and bool
 */
-function stringreader(string, split=";"){
+function stringReader(string, split=";"){
   var strP = stringParser(string);
   var arraR = arrayReader(strP, split);
     return arraR;
