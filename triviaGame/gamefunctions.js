@@ -71,10 +71,6 @@ front of it, sets the negated key to true
 @param condtion {object} an object with str and bool keys
 @return {object} an object with str, bool, and negated keys
 */
-<<<<<<< HEAD
-
-
-=======
 function notEval(condition) {
   var retObj = {};
   if (condition.bool == false) {
@@ -104,7 +100,6 @@ front of it, sets the negated key to true
 */
 
 //3. implement the following
->>>>>>> c87f6e61147bd0fbb6316ab9553c63b4066d77f5
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
 takes an array of condition objects formated {str: text, bool: bool, negated: bool}
 and uses it make a question of depths between 1 - maxDepth combined statement length
@@ -114,8 +109,6 @@ it should randomly use and or ors at a 50% chance each
 @param negate {float} chance of a negation happening
 @return a new object with the same general format
 */
-<<<<<<< HEAD
-=======
 function makeQuestions(conditions, maxDepth=3, negate=.2){
   var retObj = {};
   var string = str;
@@ -134,7 +127,6 @@ function makeQuestions(conditions, maxDepth=3, negate=.2){
 //You'll need to pick random things without replacement (did we do a function for that?)
 //You'll need to have a random chance of a negation (by default 20% (aka .2)
 //You'll need to loop through maxDepth amount of things and glue them together, but you'll have to do something different when there is only 1 left . What sort of loop and logic would work best for this?
->>>>>>> c87f6e61147bd0fbb6316ab9553c63b4066d77f5
 
 /* makeSentence(condition)
 Makes a (likely run-on) sentence out of a conditional stored in an object with the keys
@@ -146,7 +138,8 @@ adds the phrase "It is the case " to the start of the str and adds a period to t
 */
 function makeSentence(condition) {
   if (condition.negated== true ){
-    condition.str
-  }
-  {str: text, bool: bool, negated: bool}
+    condition.str ="I" + condition.str.slice(1) + ".";
+    
+    }
+
 }
