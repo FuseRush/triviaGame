@@ -111,17 +111,20 @@ and uses it make a question of depths between 1 - maxDepth combined statement le
 */
 function makeQuestions(conditions, maxDepth=3, negate=.2){
   var retObj = {};
-  var string = str;
-  var str = stringreader(string);
-  var num = uniqueIndex(string.length, randNum(string.length))
+  var int = uniqueIndex(conditions.length, randNum(conditions.length));
+  // gives me a random number of numbers based on the number of conditions
     for (var i = 0; i < maxDepth - 1; i++) {
       if (Math.random() < .5){
-        retObj = orEval(conditions[], conditions[]);
+      //use orEval
+
     }else {
-        retObj = andEval(conditions[], conditions[]);
+      //use endEval
     }
   }
-  return retObj;
+  if () {
+    //use not eval
+  }
+  //return the object of the condiotions in the str:
 }
 //^^^ with this one -
 //You'll need to pick random things without replacement (did we do a function for that?)
