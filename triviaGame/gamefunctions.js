@@ -129,8 +129,14 @@ adds the phrase "It is the case " to the start of the str and adds a period to t
 function makeSentence(condition) {
   var retObj = {}
   if (retObj.negated == true){
-    retObj.str = "I" + condition.str.slice(1) + ".";
-    retObj = {array};
+    retObj = {
+      str: "It is not the case that " + condition.str + ".",
+      bool: !condition.bool,
+      negated: true
+      }
     }
+  if (retObj.negated == false) {
+    retObj = {str: "It is the case that " + condition.str, bool: !condition.bool, negated: true}
+  }
     return condition
 }
