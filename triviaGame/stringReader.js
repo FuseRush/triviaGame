@@ -31,12 +31,12 @@ function arrayReader(array, split){
     var obj = {}
     var line = array[i].split(split);
     obj.str = line[0].trim();
-    obj.negated = false;
     if (line[1].trim() === "true") {
       obj.bool = true ;
     }else{
       obj.bool = false;
     }
+    obj.negated = false;
     retArray.push(obj);
   }
   return retArray;
