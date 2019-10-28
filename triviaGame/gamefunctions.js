@@ -78,7 +78,7 @@ function notEval(condition) {
   }else {
     retObj = {str:"It is not the case that "+ condition.str, bool: false, negated: true};
   }
-  return retObj;
+  return retObj
 }
 
 //to the following:
