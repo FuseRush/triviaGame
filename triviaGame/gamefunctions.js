@@ -72,16 +72,6 @@ front of it, sets the negated key to true
 @return {object} an object with str, bool, and negated keys
 */
 function notEval(condition) {
-  var retObj = {};
-  if (condition.bool == false) {
-    retObj = {str:"It is not the case that "+ condition.str, bool: true, negated: true};
-  }else {
-    retObj = {str:"It is not the case that "+ condition.str, bool: false, negated: true};
-  }
-  return retObj
-}
-
-function notEval2(condition) {
   return {str: "It is not the case that " + condition.str, bool: !condition.bool, negated: true}
 }
 //to the following:
