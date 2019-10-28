@@ -129,7 +129,8 @@ function makeQuestions(conditions, maxDepth=3, negate=.2){
 //^^^ with this one -
 //You'll need to pick random things without replacement (did we do a function for that?)
 //You'll need to have a random chance of a negation (by default 20% (aka .2)
-//You'll need to loop through maxDepth amount of things and glue them together, but you'll have to do something different when there is only 1 left . What sort of loop and logic would work best for this?
+//You'll need to loop through maxDepth amount of things and glue them together,
+//but you'll have to do something different when there is only 1 left . What sort of loop and logic would work best for this?
 
 /* makeSentence(condition)
 Makes a (likely run-on) sentence out of a conditional stored in an object with the keys
@@ -144,5 +145,4 @@ function makeSentence(condition) {
     condition.str ="I" + condition.str.slice(1) + ".";
     condition {array}
     }
-return
 }
