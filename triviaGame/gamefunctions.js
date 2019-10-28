@@ -72,15 +72,8 @@ front of it, sets the negated key to true
 @return {object} an object with str, bool, and negated keys
 */
 function notEval(condition) {
-  var retObj = {};
-  if (condition.bool == false) {
-    retObj = {str:"It is not the case that "+ condition.str, bool: true, negated: true};
-  }else {
-    retObj = {str:"It is not the case that "+ condition.str, bool: false, negated: true};
-  }
-  return retObj
+  return {str: "It is not the case that " + condition.str, bool: !condition.bool, negated: true}
 }
-
 //to the following:
 /* arrayReader(array, split)
 take an array of strings in the format of text 1 split text 2
@@ -139,8 +132,20 @@ adds the phrase "It is the case " to the start of the str and adds a period to t
 @return {object} a new object with the same general format
 */
 function makeSentence(condition) {
-  if (condition.negated== true ){
-    condition.str ="I" + condition.str.slice(1) + ".";
-    condition = {array};
+  var retObj = {}
+  if (retObj.negated == true){
+    retObj = {
+      str: "It is not the case that " + condition.str + ".",
+      bool: !condition.bool,
+      negated: true
+      }
     }
+  if (retObj.negated == false) {
+    retObj = {
+      str: "It is the case that " + condition.str,
+      bool: !condition.bool,
+      negated: true
+    }
+  }
+    return condition
 }
