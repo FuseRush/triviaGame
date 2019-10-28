@@ -105,19 +105,24 @@ it should randomly use and or ors at a 50% chance each
 */
 function makeQuestions(conditions, maxDepth=3, negate=.2){
   var retObj = {};
-  var int = uniqueIndex(conditions.length, randNum(conditions.length));
+  var int = uniqueIndex(conditions.length, randNum(maxDepth));
   // gives me a random number of numbers based on the number of conditions
-    for (var i = 0; i < maxDepth - 1; i++) {
+  for (var i = 0; i < int.length; i++) {
+    for (var j = 0; j < maxDepth - 1; j++) {
       if (Math.random() < .5){
-      var  cond = orEval(conditions[i], conditions[i]);
+       var orEvl = orEval(conditions[int[i]], conditions[int[j]]);
+       retObj = orEvl;
     }else {
-      var  cond = endEvl(conditions[i], conditions[i]);
+      var andEvl = andEval(conditions[int[i]], conditions[int[j]]);
+      retObj = andEvl;
     }
   }
-  if (negated == true) {
-    var notEvl = notEval(cond);
+}
+  if (conditions.negated == true) {
+   var notEvl = notEval(cond);
+   retObj = notEvl;
   }
-  //return the object of the conditions in the str:
+  return retObj;
 }
 //^^^ with this one -
 //You'll need to pick random things without replacement (did we do a function for that?)
