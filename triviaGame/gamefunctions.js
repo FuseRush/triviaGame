@@ -121,10 +121,10 @@ function makeQuestions(conditions, maxDepth=3, negate=.2){
       //use endEval
     }
   }
-  if () {
+  //if () {
     //use not eval
-  }
-  //return the object of the condiotions in the str:
+  //}
+  //return the object of the conditions in the str:
 }
 //^^^ with this one -
 //You'll need to pick random things without replacement (did we do a function for that?)
