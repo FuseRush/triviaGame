@@ -136,7 +136,11 @@ function makeSentence(condition) {
       }
     }
   if (retObj.negated == false) {
-    retObj = {str: "It is the case that " + condition.str, bool: !condition.bool, negated: true}
+    retObj = {
+      str: "It is the case that " + condition.str,
+      bool: !condition.bool,
+      negated: true
+    }
   }
     return condition
 }
