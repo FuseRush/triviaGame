@@ -142,5 +142,5 @@ function makeSentence(condition) {
       negated: true
     }
   }
-    return condition
+    return retObj
 }
