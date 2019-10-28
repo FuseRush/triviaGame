@@ -76,7 +76,7 @@ function notEval(condition) {
   if (condition.bool == false) {
     retObj = {str:"It is not the case that "+ condition.str, bool: true, negated: true};
   }else {
-    retObj = {str:"It is not the case that "+ condition.str, bool: false, negated: true}
+    retObj = {str:"It is not the case that "+ condition.str, bool: false, negated: true};
   }
   return retObj;
 }
@@ -91,13 +91,7 @@ makes a new array where each element is an object.
 @return {array} an array of objects keyed with str, bool and the new key negated: false
 */
 
-//2. implement
-/* notEval(condition)
-takes a condtion, negates it's value, adds the text "it is not the case that" to the
-front of it, sets the negated key to true
-@param condtion {object} an object with str and bool keys
-@return {object} an object with str, bool, and negated keys
-*/
+
 
 //3. implement the following
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
@@ -115,15 +109,14 @@ function makeQuestions(conditions, maxDepth=3, negate=.2){
   // gives me a random number of numbers based on the number of conditions
     for (var i = 0; i < maxDepth - 1; i++) {
       if (Math.random() < .5){
-      //use orEval
-
+      var  cond = orEval(conditions[i], conditions[i]);
     }else {
-      //use endEval
+      var  cond = endEvl(conditions[i], conditions[i]);
     }
   }
-  //if () {
-    //use not eval
-  //}
+  if (negated == true) {
+    var notEvl = notEval(cond);
+  }
   //return the object of the conditions in the str:
 }
 //^^^ with this one -
@@ -142,7 +135,7 @@ adds the phrase "It is the case " to the start of the str and adds a period to t
 function makeSentence(condition) {
   if (condition.negated== true ){
     condition.str ="I" + condition.str.slice(1) + ".";
-    condition {array}
+    condition = {array};
     }
 return
 }
