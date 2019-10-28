@@ -81,6 +81,9 @@ function notEval(condition) {
   return retObj
 }
 
+function notEval2(condition) {
+  return {str: "It is not the case that " + condition.str, bool: !condition.bool, negated: true}
+}
 //to the following:
 /* arrayReader(array, split)
 take an array of strings in the format of text 1 split text 2
@@ -134,8 +137,10 @@ adds the phrase "It is the case " to the start of the str and adds a period to t
 @return {object} a new object with the same general format
 */
 function makeSentence(condition) {
-  if (condition.negated== true ){
-    condition.str ="I" + condition.str.slice(1) + ".";
-    condition = {array};
+  var retObj = {}
+  if (retObj.negated == true){
+    retObj.str = "I" + condition.str.slice(1) + ".";
+    retObj = {array};
     }
+    return condition
 }
