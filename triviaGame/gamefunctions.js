@@ -59,13 +59,12 @@ or state and combines the text of the two conditions. Cleans up text some
 function orEval(condition1, condition2){
   var retObj = {};
   if (condition1.bool == true || condition2.bool == true ) {
-    retObj = {str: condition1.str + " or " + condition2.str, bool: true};
+    retObj = {str: condition1.str + " or " + condition2.str, bool:true};
     }else {
-    retObj = {str: condition1.str + " or " + condition2.str, bool: false};
+    retObj = {str: condition1.str + " or " +condition2.str, bool:false};
   }
-  return retObj
+  return retObj;
 }
-
 /* notEval(condition)
 takes a condtion, negates it's value, adds the text "it is not the case that" to the
 front of it, sets the negated key to true
@@ -104,6 +103,7 @@ front of it, sets the negated key to true
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
 takes an array of condition objects formated {str: text, bool: bool, negated: bool}
 and uses it make a question of depths between 1 - maxDepth combined statement length
+it should randomly use and or ors at a 50% chance each
 @param condition {array} an array of objects formatted as listed above
 @param maxDepth {int} number of conditionals to be put together at max
 @param negate {float} chance of a negation happening
@@ -131,12 +131,18 @@ function makeQuestions(conditions, maxDepth=3, negate=.2){
 //You'll need to have a random chance of a negation (by default 20% (aka .2)
 //You'll need to loop through maxDepth amount of things and glue them together, but you'll have to do something different when there is only 1 left . What sort of loop and logic would work best for this?
 
-//4. implement the following
 /* makeSentence(condition)
-Makes a (likely run-on) sentence out of a conditional stored in an object with the keys str,
-bool, and negated. It does the following: if negated then it capitalized the i in
-"it is not the case" and adds a period to the end of the str. If it is not
-negated then it adds the phrase "It is the case " to the start of the str and adds a period to the end of the string.
+Makes a (likely run-on) sentence out of a conditional stored in an object with the keys
+str, bool, and negated. It does the following: if negated then it capitalized the i in
+"it is not the case" and adds a period to the end of the str. If it is not negated then it
+adds the phrase "It is the case " to the start of the str and adds a period to the end of the string.
 @param condition {array} an array of objects formatted as listed above
 @return {object} a new object with the same general format
 */
+function makeSentence(condition) {
+  if (condition.negated== true ){
+    condition.str ="I" + condition.str.slice(1) + ".";
+    condition {array}
+    }
+return
+}
