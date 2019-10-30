@@ -72,7 +72,7 @@ front of it, sets the negated key to true
 @return {object} an object with str, bool, and negated keys
 */
 function notEval(condition) {
-  return {str: "It is not the case that " + condition.str, bool: !condition.bool, negated: !conditon.negated}
+  return {str: "It is not the case that " + condition.str, bool: !condition.bool, negated: !condition.negated}
 }
 //to the following:
 /* arrayReader(array, split)
@@ -133,9 +133,27 @@ it should randomly use and or ors at a 50% chance each
 
 */
 
+function helpNeg(condition, negate=.2){
+  var eval = notEval(condition);
+  var num = Math.random();
+    if (num <= negate) {
+      return eval;
+    }else {
+      return condition;
+    }
+  }
+
+
 function makeQuestions(conditions, maxDepth=3, negate=.2){
-  var retObj = {};
-  if (true) {
+    var retObj = {};
+    var num = randNum(maxDepth);
+    var index = uniqueIndex(conditions.length, num);
+  if (num == 1) {
+    var cond = randNum(conditions.length);
+    var neg = helpNeg(conditions[cond]);
+      retObj = neg;
+      return retObj;
+  }else {
 
   }
 }
