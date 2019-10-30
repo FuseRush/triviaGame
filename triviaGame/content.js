@@ -11,7 +11,7 @@ Aidan is not lazy; fase;
 when working with Aidan litle work gets done; true;
 Mike isnt a total beast with monty in ros; true;
 piggins were made by the government; false;
-bad dragonis comoto dragon breeding company with the goal of making them a domesticated pet; true;
+bad dragon is a comoto dragon breeding company with the goal of making them a domesticated pet; true;
 The earth is not flat; true;
 The earth is not a perfect sphere; true;
 Radiation kills; true;
