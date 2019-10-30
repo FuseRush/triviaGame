@@ -1,4 +1,4 @@
-'cccccfvVVVVVVVVVVVV  '/* randNum(max);
+/*randNum(max);
 a helper function to return whole number randoms
 @param max {int} the max in the random range
 @return {int} a random number of 1 or more
@@ -6,6 +6,7 @@ a helper function to return whole number randoms
 function randNum(max){
   return Math.floor(Math.random()*max)+1;
 }
+
 
 /* uniqueIndex(max, number)
 a helper function to get unique numbers out of a range so as to avoid reuse.
@@ -54,6 +55,7 @@ or state and combines the text of the two conditions. Cleans up text some
 @param condition2 {object} an object with str and bool keys
 @return {object} an object with str and bool keys
 */
+
 function orEval(condition1, condition2){
   var retObj = {};
   if (condition1.bool == true || condition2.bool == true ) {
@@ -63,7 +65,6 @@ function orEval(condition1, condition2){
   }
   return retObj;
 }
-
 /* notEval(condition)
 takes a condtion, negates it's value, adds the text "it is not the case that" to the
 front of it, sets the negated key to true
@@ -83,6 +84,8 @@ makes a new array where each element is an object.
 @return {array} an array of objects keyed with str, bool and the new key negated: false
 */
 
+
+
 //3. implement the following
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
 takes an array of condition objects formated {str: text, bool: bool, negated: bool}
@@ -95,24 +98,9 @@ it should randomly use and or ors at a 50% chance each
 */
 function makeQuestions(conditions, maxDepth=3, negate=.2){
   var retObj = {};
-  var int = uniqueIndex(conditions.length, randNum(maxDepth));
-  // gives me a random number of numbers based on the number of conditions
-  for (var i = 0; i < int.length; i++) {
-    for (var j = 0; j < maxDepth - 1; j++) {
-      if (Math.random() < .5){
-       var orEvl = orEval(conditions[int[i]], conditions[int[j]]);
-       retObj = orEvl;
-    }else {
-      var andEvl = andEval(conditions[int[i]], conditions[int[j]]);
-      retObj = andEvl;
-    }
+  if (true) {
+
   }
-}
-  if (conditions.negated == true) {
-   var notEvl = notEval(cond);
-   retObj = notEvl;
-  }
-  return retObj;
 }
 //^^^ with this one -
 //You'll need to pick random things without replacement (did we do a function for that?)
@@ -129,20 +117,10 @@ adds the phrase "It is the case " to the start of the str and adds a period to t
 @return {object} a new object with the same general format
 */
 function makeSentence(condition) {
-  var retObj = {}
-  if (retObj.negated == true){
-    retObj = {
-      str: "It is not the case that " + condition.str + ".",
-      bool: !condition.bool,
-      negated: true
-      }
+  if (condition.negated) {
+    condition.str = "I" + condition.str.slice(1) + ".";
+    }else{
+  condition.str = "It is not the case " + condition.str + ".";
     }
-  if (retObj.negated == false) {
-    retObj = {
-      str: "It is the case that " + condition.str + ".",
-      bool: !condition.bool,
-      negated: false
-    }
+    return condition
   }
-    return retObj
-}
