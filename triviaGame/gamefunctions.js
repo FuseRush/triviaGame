@@ -135,7 +135,7 @@ it should randomly use and or ors at a 50% chance each
 
 function makeQuestions(conditions, maxDepth=3, negate=.2){
   var retObj = {};
-  
+
 }
 //^^^ with this one -
 //You'll need to pick random things without replacement (did we do a function for that?)
