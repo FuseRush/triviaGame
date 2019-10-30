@@ -7,7 +7,6 @@ function randNum(max){
   return Math.floor(Math.random()*max)+1;
 }
 
-
 /* uniqueIndex(max, number)
 a helper function to get unique numbers out of a range so as to avoid reuse.
 @param max {int} the max number in the number in the range +1
@@ -55,7 +54,6 @@ or state and combines the text of the two conditions. Cleans up text some
 @param condition2 {object} an object with str and bool keys
 @return {object} an object with str and bool keys
 */
-
 function orEval(condition1, condition2){
   var retObj = {};
   if (condition1.bool == true || condition2.bool == true ) {
@@ -65,6 +63,7 @@ function orEval(condition1, condition2){
   }
   return retObj;
 }
+
 /* notEval(condition)
 takes a condtion, negates it's value, adds the text "it is not the case that" to the
 front of it, sets the negated key to true
@@ -83,8 +82,6 @@ makes a new array where each element is an object.
 @param split: {string} the item to split at
 @return {array} an array of objects keyed with str, bool and the new key negated: false
 */
-
-
 
 //3. implement the following
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
@@ -154,6 +151,25 @@ adds the phrase "It is the case " to the start of the str and adds a period to t
 @return {object} a new object with the same general format
 */
 function makeSentence(condition) {
+<<<<<<< HEAD
+  var retObj = {}
+  if (retObj.negated == true){
+    retObj = {
+      str: "It is not the case that " + condition.str + ".",
+      bool: !condition.bool,
+      negated: true
+      }
+    }
+  if (retObj.negated == false) {
+    retObj = {
+      str: "It is the case that " + condition.str + ".",
+      bool: !condition.bool,
+      negated: false
+    }
+  }
+    return retObj
+}
+=======
   if (condition.negated) {
     condition.str = "I" + condition.str.slice(1) + ".";
     }else{
@@ -161,3 +177,4 @@ function makeSentence(condition) {
     }
     return condition
   }
+>>>>>>> e6872fd540a9f965debf05a13b60e6e46c2b5123
