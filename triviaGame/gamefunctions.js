@@ -146,15 +146,24 @@ function helpNeg(condition, negate=.2){
 
 function makeQuestions(conditions, maxDepth=3, negate=.2){
     var retObj = {};
+    var bob = Math.random();
     var num = randNum(maxDepth);
     var index = uniqueIndex(conditions.length, num);
-  if (num == 1) {
     var cond = randNum(conditions.length);
     var neg = helpNeg(conditions[cond]);
+    var arr = stringReader(string[uniqueIndex]);
+  if (num == 1) {
       retObj = neg;
       return retObj;
   }else {
-    
+    for (var i = 0; i < num.length; i++) {
+      if (bob <= .5) {
+        retObj = arr.pop();
+      }else{
+        retObj = arr.pop();
+      }
+    }
+    return retObj;
   }
 }
 //^^^ with this one -
