@@ -146,25 +146,27 @@ function helpNeg(condition, negate=.2){
 
 function makeQuestions(conditions, maxDepth=3, negate=.2){
     var retObj = {};
-    var bob = Math.random();
     var num = randNum(maxDepth);
     var index = uniqueIndex(conditions.length, num);
-    var cond = randNum(conditions.length);
-    var neg = helpNeg(conditions[cond]);
-    var arr = stringReader(string[uniqueIndex]);
   if (num == 1) {
-      retObj = neg;
-      return retObj;
+    var cond = randNum(conditions.length);
+    retObj = helpNeg(conditions[cond]);
   }else {
-    for (var i = 0; i < num.length; i++) {
+    var cond = randNum(conditions.length);
+    retObj = helpNeg(conditions[cond]);
+   for (var i = 0; i < num; i++) {
+      var obj = conditions[index[i]];
+     // var use = arr[index[i]].pop();
+     var bob = Math.random();
       if (bob <= .5) {
-        retObj = arr.pop();
+        console.log(retObj);
+        retObj = andEval(obj, retObj);
       }else{
-        retObj = arr.pop();
+        retObj = orEval(obj, retObj);
       }
     }
-    return retObj;
   }
+    return retObj;
 }
 //^^^ with this one -
 //You'll need to pick random things without replacement (did we do a function for that?)
