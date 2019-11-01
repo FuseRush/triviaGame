@@ -150,12 +150,23 @@ function makeQuestions(conditions, maxDepth=3, negate=.2){
     var index = uniqueIndex(conditions.length, num);
   if (num == 1) {
     var cond = randNum(conditions.length);
-    var neg = helpNeg(conditions[cond]);
-      retObj = neg;
-      return retObj;
+    retObj = helpNeg(conditions[cond]);
   }else {
-
+    var cond = randNum(conditions.length);
+    retObj = helpNeg(conditions[cond]);
+   for (var i = 0; i < num; i++) {
+      var obj = conditions[index[i]];
+     // var use = arr[index[i]].pop();
+     var bob = Math.random();
+      if (bob <= .5) {
+        console.log(retObj);
+        retObj = andEval(obj, retObj);
+      }else{
+        retObj = orEval(obj, retObj);
+      }
+    }
   }
+    return retObj;
 }
 //^^^ with this one -
 //You'll need to pick random things without replacement (did we do a function for that?)
