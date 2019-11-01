@@ -146,10 +146,10 @@ function makeQuestions(conditions, maxDepth=3, negate=.2){
     var num = randNum(maxDepth);
     var index = uniqueIndex(conditions.length, num);
   if (num == 1) {
-    var cond = randNum(conditions.length);
+    var cond = randNum(conditions.length) - 1;
     retObj = helpNeg(conditions[cond]);
   }else {
-    var cond = randNum(conditions.length);
+    var cond = randNum(conditions.length) - 1;
     retObj = helpNeg(conditions[cond]);
    for (var i = 0; i < num; i++) {
       var obj = conditions[index[i]];
