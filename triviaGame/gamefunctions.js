@@ -7,7 +7,6 @@ function randNum(max){
   return Math.floor(Math.random()*max)+1;
 }
 
-
 /* uniqueIndex(max, number)
 a helper function to get unique numbers out of a range so as to avoid reuse.
 @param max {int} the max number in the number in the range +1
@@ -55,7 +54,6 @@ or state and combines the text of the two conditions. Cleans up text some
 @param condition2 {object} an object with str and bool keys
 @return {object} an object with str and bool keys
 */
-
 function orEval(condition1, condition2){
   var retObj = {};
   if (condition1.bool == true || condition2.bool == true ) {
@@ -65,6 +63,7 @@ function orEval(condition1, condition2){
   }
   return retObj;
 }
+
 /* notEval(condition)
 takes a condtion, negates it's value, adds the text "it is not the case that" to the
 front of it, sets the negated key to true
@@ -83,8 +82,6 @@ makes a new array where each element is an object.
 @param split: {string} the item to split at
 @return {array} an array of objects keyed with str, bool and the new key negated: false
 */
-
-
 
 //3. implement the following
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
@@ -159,7 +156,7 @@ function makeQuestions(conditions, maxDepth=3, negate=.2){
      // var use = arr[index[i]].pop();
      var bob = Math.random();
       if (bob <= .5) {
-          retObj = andEval(obj, retObj);
+        retObj = andEval(obj, retObj);
       }else{
           retObj = orEval(obj, retObj);
       }
