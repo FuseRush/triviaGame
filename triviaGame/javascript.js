@@ -20,8 +20,8 @@ if the player enters r, have it set the score to 0.
 function gamePlay() {
   var playGame = 1;
   var score = 0;
-  var questions = stringReader();
+  var questions = stringReader(string);
   while (playGame == 1) {
-    makeQuestion();
+    makeQuestion(questions);
   }
 }
