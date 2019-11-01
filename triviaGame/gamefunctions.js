@@ -18,11 +18,11 @@ function uniqueIndex(max, number){
   var numbers = [];
   array.length = max;
   for (var i = 0; i < number; i++) {
-    var num = randNum(max);
+    var num = randNum(max) - 1;
     if (array[num] !== "") {
       numbers[i] = num;
     }else {
-      var num = randNum(max);
+      var num = randNum(max) - 1;
       i--;
     }
     array[num] = "";
@@ -158,12 +158,21 @@ function makeQuestions(conditions, maxDepth=3, negate=.2){
       if (bob <= .5) {
         retObj = andEval(obj, retObj);
       }else{
-        retObj = orEval(obj, retObj);
+          retObj = orEval(obj, retObj);
       }
     }
   }
     return retObj;
 }
+// errors
+// 1."conditions length " + conditions.length + " index " + index + " num " + num; = gamefunctions.js:165 Uncaught conditions length 62 index 62,2 num 2
+// 2."conditions[index]" + conditions[index]+ " conditions[index[i]] " + conditions[index[i]]; = conditions[index]undefined conditions[index[i]] undefined
+// 3. "num " + num + " index " + index + " i " + i = gamefunctions.js:165 Uncaught num 3 index 62,42,46 i 0
+
+
+
+
+
 //^^^ with this one -
 //You'll need to pick random things without replacement (did we do a function for that?)
 //You'll need to have a random chance of a negation (by default 20% (aka .2)

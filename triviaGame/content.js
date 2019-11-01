@@ -26,7 +26,7 @@ euan is memphis's twin and took his legs; true;
 it smells like stale diretos; true;
 Emma is tall; false;
 it is raining outside; true;
-Aidan is an idiot; false;
+Aidan is an idiot; true;
 Bowen is cool; true;
 Memphis cant reach the top shelf; false;
 lamorie has baby legs; false;
@@ -44,7 +44,7 @@ kade has a crush on brad; true;
 euan is swim; true;
 mike is trash; true;
 aidan is the better leader; false;
-aidan has a future; true;
+aidan has a future; false;
 TBB is best; true;
 Lamorie is cool; true;
 mike is here legaly; false
