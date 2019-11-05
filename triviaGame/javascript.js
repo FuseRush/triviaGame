@@ -23,22 +23,22 @@ function makeGame(){
     while (playGame) {
       var bob = makeQuestions(questions);
       var pro = ("your score is: " + score +  " the question is: " + bob.str + ".")
-    if (bob.bool == true && document.getElementById(trueBtn).clicked == true ) {
+    if (bob.bool == true && document.getElementById(trueBtn).clicked == true) {
         score += 1;
       }else {
         continue;
       }
-    if (bob.bool == true && document.getElementById(trueBtn).clicked == false ) {
+    if (bob.bool == true && document.getElementById(trueBtn).clicked == false) {
         score -= 1;
       }else {
         continue;
       }
-    if (bob.bool == false && document.getElementById(falseBtn).clicked == true ) {
+    if (bob.bool == false && document.getElementById(falseBtn).clicked == true) {
         score += 1;
       }else {
         continue;
       }
-    if (bob.bool == false && document.getElementById(falseBtn).clicked == false ) {
+    if (bob.bool == false && document.getElementById(falseBtn).clicked == false) {
         score -= 1;
       }else {
         continue;
