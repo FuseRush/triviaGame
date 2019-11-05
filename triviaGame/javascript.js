@@ -25,15 +25,23 @@ document.getElementById("buttons").addEventListener("click", function(){
       var pro = ("your score is: " + score +  " the question is: " + bob.str + ".")
     if (bob.bool == true && document.getElementById(trueBtn).clicked == true ) {
         score += 1;
+      }else {
+        continue;
       }
     if (bob.bool == true && document.getElementById(trueBtn).clicked == false ) {
         score -= 1;
+      }else {
+        continue;
       }
     if (bob.bool == false && document.getElementById(falseBtn).clicked == true ) {
         score += 1;
+      }else {
+        continue;
       }
     if (bob.bool == false && document.getElementById(falseBtn).clicked == false ) {
         score -= 1;
+      }else {
+        continue;
       }
   if (pro == "q" || pro == "Q") {
         playGame = false;

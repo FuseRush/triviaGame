@@ -189,9 +189,9 @@ adds the phrase "It is the case " to the start of the str and adds a period to t
 */
 function makeSentence(condition) {
   if (condition.negated) {
-    condition.str = "I" + condition.str.slice(1) + ".";
+      condition.str = "I" + condition.str.slice(1) + ".";
     }else{
-  condition.str = "It is not the case " + condition.str + ".";
+      condition.str = "It is not the case " + condition.str + ".";
     }
     return condition
   }
