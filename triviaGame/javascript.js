@@ -16,12 +16,28 @@ if the player responds with a q have it set the playGame to false
 
 if the player enters r, have it set the score to 0.
 */
-
-function gamePlay() {
-  var playGame = 1;
+document.getElementById("buttons").addEventListener("click", function(){
+  var playGame = true;
   var score = 0;
   var questions = stringReader(string);
-  while (playGame == 1) {
-    makeQuestion(questions);
+    while (playGame) {
+      var bob = makeQuestions(questions);
+      var pro = ("your score is: " + score +  " the question is: " + bob.str + ".")
+    if (bob.bool == true && document.getElementById(trueBtn).clicked == true ) {
+        score += 1;
+      }
+    if (bob.bool == true && document.getElementById(trueBtn).clicked == false ) {
+        score -= 1;
+      }
+    if (bob.bool == false && document.getElementById(falseBtn).clicked == true ) {
+        score += 1;
+      }
+    if (bob.bool == false && document.getElementById(falseBtn).clicked == false ) {
+        score -= 1;
+      }
+  if (pro == "q" || pro == "Q") {
+        playGame = false;
+    }
+    return pro;
   }
-}
+});
