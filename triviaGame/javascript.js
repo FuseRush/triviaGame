@@ -16,7 +16,7 @@ if the player responds with a q have it set the playGame to false
 
 if the player enters r, have it set the score to 0.
 */
-document.getElementById("buttons").addEventListener("click", function(){
+function makeGame(){
   var playGame = true;
   var score = 0;
   var questions = stringReader(string);
@@ -48,4 +48,6 @@ document.getElementById("buttons").addEventListener("click", function(){
     }
     return pro;
   }
-});
+}
+
+document.getElementById("replace").innerHTML = makeGame();
